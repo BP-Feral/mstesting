@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="MStesting"
+run/main_scene="res://_splash_screen/splash_screen.tscn"
+config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="res://_icons/icon.png"
+
+[autoload]
+
+Globals="*res://_singletons/Globals.gd"
+
+[display]
+
+window/size/mode=3
+window/size/resizable=false
+
+[file_customization]
+
+folder_colors={
+"res://_icons/": "gray",
+"res://_singletons/": "gray",
+"res://_splash_screen/": "gray",
+"res://assets/": "yellow",
+"res://scenes/": "pink",
+"res://scripts/": "blue",
+"res://ui/": "green"
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
