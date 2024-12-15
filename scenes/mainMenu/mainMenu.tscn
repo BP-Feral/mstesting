@@ -1,5 +1,51 @@
-[gd_scene format=3 uid="uid://ijq60g7fflk2"]
+[gd_scene load_steps=5 format=3 uid="uid://ijq60g7fflk2"]
 
-[node name="MainMenu" type="Control"]
+[ext_resource type="Script" path="res://scenes/mainMenu/main_menu.gd" id="1_mky2u"]
+[ext_resource type="Theme" uid="uid://5t7i7ktgdumj" path="res://ui/base_theme.tres" id="2_x3eus"]
+[ext_resource type="FontFile" uid="uid://bpnthqhfey3q0" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_f3j1y"]
+[ext_resource type="FontFile" uid="uid://dgmbj68gvje8g" path="res://assets/fonts/PixelOperator8.ttf" id="4_3tsqn"]
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("textEdit")]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_mky2u")
+textEdit = NodePath("TextEdit")
+
+[node name="Join" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 0
+offset_left = 79.0
+offset_top = 164.0
+offset_right = 229.0
+offset_bottom = 204.0
+focus_mode = 0
+theme = ExtResource("2_x3eus")
+theme_override_fonts/font = ExtResource("3_f3j1y")
+text = "Join
+"
+
+[node name="Host" type="Button" parent="."]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 0
+offset_left = 79.0
+offset_top = 85.0
+offset_right = 229.0
+offset_bottom = 125.0
+focus_mode = 0
+theme = ExtResource("2_x3eus")
+theme_override_fonts/font = ExtResource("3_f3j1y")
+text = "Host"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 164.0
+offset_right = 443.0
+offset_bottom = 204.0
+focus_mode = 1
+theme = ExtResource("2_x3eus")
+theme_override_fonts/font = ExtResource("4_3tsqn")
+theme_override_font_sizes/font_size = 16
+
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]

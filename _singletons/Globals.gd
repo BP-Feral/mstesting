@@ -6,8 +6,8 @@ var ONLINE : bool = false
 var steamID : int = 0
 var steamName : String = ""
 
-var steamAppID : int = 420
-var steamGameID : int = 420
+var steamAppID : int = 2415880
+var steamGameID : int = 2415880
 
 var INIT : Dictionary = {}
 
